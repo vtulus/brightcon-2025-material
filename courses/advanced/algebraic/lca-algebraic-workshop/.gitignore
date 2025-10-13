@@ -1,0 +1,7 @@
+.idea/
+__pycache__
+
+.ipynb_checkpoints
+ecoinvent3.4
+.jupyter/
+

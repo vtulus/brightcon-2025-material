@@ -1,0 +1,63 @@
+---
+jupyter:
+  jupytext:
+    formats: md,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.16.2
+  kernelspec:
+    display_name: lca_alg_11
+    language: python
+    name: lca_alg_11
+---
+
+# Import ecoinvent (technosphere + biosphere) in a brightway project directly from your ecoinvent online account
+
+Authors : Pierre jouannais, Joanna Schlesinger
+
+```{python}
+import bw2data
+import bw2io
+```
+
+```{python}
+#Give the password associated with your ecoinvent account
+#Warning don't share your id/password on git
+from ecoinvent_interface import Settings, permanent_setting
+permanent_setting("username", "put-here-your-username")
+permanent_setting("password", "put-here-your-password")
+```
+
+```{python}
+# To do : update the name of the bightway project
+NAME_PROJECT='atelier-pv'
+```
+
+```{python}
+#open a brightway project
+bw2data.projects.set_current(NAME_PROJECT)
+bw2data.projects.current
+```
+
+```{python}
+#load the chosen vesion of ecoinvent. Here an example with ecoinvent 3.9.1, cut off
+bw2io.import_ecoinvent_release("3.8", "cutoff")
+```
+
+```{python}
+#You should have two databases in your project : technosphere and biosphere database
+#The biopshere database loaded is automatically compatible with the ecoinvent version chosen 
+bw2data.databases
+```
+
+```{python}
+# Optional : If tou need to manipulate the database, give it a variable name
+ecoinvent_3_8 = bw2data.Database('ecoinvent-3.8-cutoff')
+```
+
+```{python}
+#Optional : if you need to delete a USER_DB
+#del bw2data.databases["name-db-to-delete"]
+```
