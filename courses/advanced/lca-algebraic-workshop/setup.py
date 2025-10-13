@@ -10,4 +10,11 @@ bd.projects.set_current(NAME_PROJECT)
 bi.import_ecoinvent_release(
         version="3.10.1",
         system_model="cutoff",
-        use_mp=True)
+        use_mp=True
+        #username="XX",
+        #password="yy"
+        )
+
+# For those that have a valid ecoinvent license, you can simply restore a project with:
+
+# bi.restore_project("/srv/data/brightway2-project-workshop-bw25-backup13-October-2025-05-30PM.tar.gz")
