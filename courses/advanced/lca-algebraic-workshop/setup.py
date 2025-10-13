@@ -17,4 +17,5 @@ bi.import_ecoinvent_release(
 
 # For those that have a valid ecoinvent license, you can simply restore a project with:
 
-# bi.restore_project("/srv/data/brightway2-project-workshop-bw25-backup13-October-2025-05-30PM.tar.gz")
+# bi.restore_project_directory("/srv/data/brightway2-project-workshop-bw25-backup13-October-2025-05-30PM.tar.gz", overwrite_existing=True)
+
