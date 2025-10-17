@@ -186,3 +186,9 @@ pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 
+# uv-related
+.uv/
+
+# VS Code
+.vscode/
+*.code-workspace
